@@ -1,0 +1,22 @@
+{# src/Rw/UserBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+	User - {{ parent() }}
+{% endblock %}
+
+{% block title_bundle %}
+	Bienvenue dans l'espace membre !
+{% endblock %}
+
+{% block menu %}
+	{% block rwmenublog %}
+	{% endblock %}
+{% endblock %}
+
+{% block body %}
+		{% block rwblog_body %}
+		{% endblock %}
+{% endblock %}
+	

@@ -1,0 +1,19 @@
+{# src/Rw/UserBundle/Resources/views/Security/adduser.html.twig #}
+
+{% extends "RwUserBundle::layout.html.twig" %}
+{% block title %}
+	Créer votre compte - {{ parent() }}
+{% endblock %}
+
+{% block rwmenublog %}	
+	<h3>Menu utilisateur</h3>
+	<ul class="nav nav-pills nav-stacked">
+		{% include "RwUserBundle:Security:usermenu.html.twig" %}
+	</ul>
+{% endblock %}
+{% block rwblog_body %}
+	<h2>Créez votre compte</h2>
+	</br>
+	{% include "RwUserBundle:Security:formAddUser.html.twig" %}
+</div>
+{% endblock %}

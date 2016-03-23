@@ -1,0 +1,14 @@
+rw_blog:
+    resource: "@RwBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+login:
+    path:   /login
+    defaults:  { _controller: RwUserBundle:Security:login }
+login_check:
+    path:   /login_check
+logout:
+    path:   /logout
+rw_user:
+    path:   /adduser
+    defaults:  { _controller: RwUserBundle:Security:add }
+

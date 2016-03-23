@@ -1,0 +1,9 @@
+{# src/Rw/BlogBundle/Resources/views/Blog/blogmenu.html.twig #}
+
+		<li><a href="{{ path('rwblog_home') }}">Accueil du blog</a></li>
+		<li><a href="{{ path('rwblog_list') }}">Liste des billets</a></li>
+	{% if is_granted('ROLE_AUTEUR') %}
+		<li><a href="{{ path('rwblog_add') }}">Ajouter un billet</a></li>
+		<li><a href="{{ path('rwblog_home') }}">Modifier un billet</a></li>	
+		<li><a href="{{ path('rwblog_home') }}">Supprimer un billet</a></li>
+	{% endif %}

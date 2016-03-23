@@ -1,0 +1,10 @@
+{# src/Rw/UserBundle/Resources/views/Blog/usermenu.html.twig #}
+
+		<li><a href="{{ path('rwblog_home') }}">Accueil</a></li>
+		<li><a href="{{ path('rw_user') }}">Créer un compte</a></li>
+		<li><a href="{{ path('login') }}">Connectez vous</a></li>
+	{% if is_granted('ROLE_USER') %}
+		<li><a href="{{ path('rwblog_home') }}">Ajouter un commentaire</a></li>
+		<li><a href="{{ path('rwblog_home') }}">blabla 1 ...</a></li>	
+		<li><a href="{{ path('rwblog_home') }}">blabla 2 ...</a></li>
+	{% endif %}

@@ -1,0 +1,40 @@
+{# src/Rw/UserBundle/Resources/views/Security/login.html.twig #}
+
+{% extends "RwUserBundle::layout.html.twig" %}
+{% block rwmenublog %}	
+	<h3>Menu utilisateur</h3>
+	<ul class="nav nav-pills nav-stacked">
+		{% include "RwUserBundle:Security:usermenu.html.twig" %}
+	</ul>
+{% endblock %}
+{% block body %}
+<div class="well">
+	<h3>Saisie de vos identifiants :</h3>
+	{# S'il y a une erreur, on l'affiche dans un joli cadre #}
+		{% if error %}
+			<div class="alert alert-danger">{{ error.message }}</div>
+		{% endif %}
+		{# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
+		<form action="{{ path('login_check') }}" method="post">
+			<div class="row">
+				<div class="form-group">
+					<label for="username" class="col-lg-2 control-label">Login :</label>
+					<div class="col-lg-10">
+						<input type="text" id="username" name="_username" value="{{ last_username }}" />
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="form-group">
+					<label for="password" class="col-lg-2 control-label">Mot de passe :</label>
+					<div class="col-lg-10">
+						<input type="password" id="password" name="_password" />
+					</div>
+				</div>
+			</div>
+			<br />
+			<input type="submit" class="btn btn-primary" value="Connexion" />
+		</form>
+</div>
+{% endblock %}

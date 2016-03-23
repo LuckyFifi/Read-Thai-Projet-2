@@ -1,0 +1,26 @@
+{# src/Rw/BlogBundle/Resources/views/Blog/view.html.twig #}
+
+{% extends "RwBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	Lecture d'un billet - {{ parent() }}
+{% endblock %}
+
+{% block rwmenublog %}	
+	<h3>Le menu du blog</h3>
+	<ul class="nav nav-pills nav-stacked">
+		{% include "RwBlogBundle:Blog:blogmenu.html.twig" %}
+		{% include "RwBlogBundle:Blog:menucomment.html.twig" %}
+	</ul>
+{% endblock %}
+
+{% block rwblog_body %}
+<h2>{{ billet.title }}</h2>
+</br>
+<i>Par {{ billet.author }}, le {{ billet.date|date('d/m/Y') }}</i>
+
+<div class="well">
+    {{ billet.content }}
+</div>
+
+{% endblock %}

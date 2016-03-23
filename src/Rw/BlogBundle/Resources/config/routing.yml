@@ -1,0 +1,30 @@
+# src/Rw/BlogBundle/Resources/config/routing.yml
+rwblog_home:
+    path:      /{page}
+    defaults:  { _controller: RwBlogBundle:Blog:index, page: 1 }
+    requirements:
+        page:  \d*		
+
+rwblog_list:
+    path:      /list
+    defaults:  { _controller: RwBlogBundle:Blog:list}
+
+rwblog_view:
+    path:      /billet/{id}
+    defaults:  { _controller: RwBlogBundle:Blog:view }
+    
+rwblog_add:
+    path:      /add
+    defaults:  { _controller: RwBlogBundle:Blog:add }
+
+rwblog_edit:
+    path:      /edit/{id}
+    defaults:  { _controller: RwBlogBundle:Blog:edit }
+    requirements:
+        id:  \d+
+
+rwblog_delete:
+    path:      /delete/{id}
+    defaults:  { _controller: RwBlogBundle:Blog:delete }
+    requirements:
+        id:  \d+

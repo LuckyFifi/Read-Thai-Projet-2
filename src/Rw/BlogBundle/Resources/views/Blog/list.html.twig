@@ -1,0 +1,29 @@
+{# src/Rw/BlogBundle/Resources/views/Blog/list.html.twig #}
+
+{% extends "RwBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	Accueil - {{ parent() }}
+{% endblock %}
+
+{% block rwmenublog %}	
+	<h3>Le menu du blog</h3>
+	<ul class="nav nav-pills nav-stacked">
+		{% include "RwBlogBundle:Blog:blogmenu.html.twig" %}
+	</ul>
+{% endblock %}
+
+{% block rwblog_body %}		
+	<h2>Liste des billets publiés ...</h2>
+		<ul>
+			{% for billet in billets %}
+			<li>
+				<a href="{{ path('rwblog_view', {'id': billet.id}) }}">{{ billet.title }}</a>
+				par {{ billet.author }},
+				le {{ billet.date|date('d/m/Y') }}
+			</li>
+			{% else %}
+			<li>Pas (encore !) de billets</li>
+			{% endfor %}
+		</ul>
+{% endblock %}

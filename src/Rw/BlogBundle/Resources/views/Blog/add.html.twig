@@ -1,0 +1,20 @@
+{# src/Rw/BlogBundle/Resources/views/Blog/add.html.twig #}
+
+{% extends "RwBlogBundle::layout.html.twig" %}
+
+{% block title %}
+  Ajouter un billet - {{ parent() }}
+{% endblock %}
+
+{% block rwmenublog %}	
+	<h3>Le menu du blog</h3>
+	<ul class="nav nav-pills nav-stacked">
+		{% include "RwBlogBundle:Blog:blogmenu.html.twig" %}
+	</ul>
+{% endblock %}
+
+{% block rwblog_body %}
+	<h2>Ajouter un billet</h2>
+	</br>
+	{% include "RwBlogBundle:Blog:formulaire.html.twig" %}
+{% endblock %}
